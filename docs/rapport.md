@@ -72,24 +72,24 @@ Et cas de déconnexion de certains nœuds l’équilibrage du réseau se fait à
 
 ## IV.SECURITE DU RESEAU
 ### 1.CONNEXION D’UN NOEUD
-Pour se connecter à nœud il faut se connecter à partir du serveur central avec une interface de connexion.
+Pour se connecter à nœud il faut se connecter à partir du registre central avec une interface de connexion.
 Une fois que ce nœud est autorisé à intégrer le groupe on lui attribut un identifiant du réseau, ainsi que sa clés privé les communications.
 ![interconnexion de noeuds par id](https://lh5.googleusercontent.com/5Qu0VGjddh7L3op09bn5m8UGfYbiD2CCK5vLWFbqgxUv8_ohIhkyAvc15Z1qeInFbBaSoRht4t4uTanWGPZk=w1360-h672)
 > _Figure 6 interconnexion de noeuds par id_
 
 ### 2.COMMUNICATION DU RESEAU
-Après la connexion la clé privée est envoyé au nœud et la clé publique est gardée au niveau de serveur principale qui va rendre la clé publique disponible sur l’annuaire afin que les autre nœuds entrent en communication.  
+Après la connexion la clé privée est envoyé au nœud et la clé publique est gardée au niveau de registre principale qui va rendre la clé publique disponible sur l’annuaire afin que les autre nœuds entrent en communication.  
 ![Systeme asymetrique](https://lh6.googleusercontent.com/LTh-oPqmPclwcMihYgAVk1WJh-2rWK1ynFBcspzFphZQ9D8tTuq3NluMb9YlURdiXQ8bChIjvuha1gxHwNiQ=w1360-h672)
 > _Figure 7 Systeme asymetrique_
-### 2.SECURITE SERVEUR
-Lorsqu'un hôte est identifié comment valide par le serveur il ya une instance qui est créée au niveau du serveur
+### 2.SECURITE REGISTRE
+Lorsqu'un hôte est identifié comment valide par le registreprincipal il ya une instance qui est créée au niveau celui ci
 
 > ID	|  PUBLIC_KEY  |	PRIVATE_KEY  | ADRESS_KEY
 
 Ensuite pour que A se connecter à un hôte B il faudrai avoir: 
 
-- **PUBLIC_KEY de B** fournit par le serveur aux noeuds identifiés
+- **PUBLIC_KEY de B** fournit par le registre principal aux noeuds identifiés
 
-- **PRIVATE_KEY de A** fournit par le serveur au noeud A lorsde l'identification
+- **PRIVATE_KEY de A** fournit par le registre principal au noeud A lorsde l'identification
 
-- **ADDRESS de B** fournit par le serveur au noeud A lorsde l'identification et la construction de sa table locale (A) de voisins.
+- **ADDRESS de B** fournit par le registre principal au noeud A lorsde l'identification et la construction de sa table locale (A) de voisins.
