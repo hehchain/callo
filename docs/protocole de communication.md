@@ -1,9 +1,16 @@
 # PROTOCOLE DE COMMUNICATION
 
 Dans le système de communication du réseau **SPHYX** on compte deux principales composantes :
-
 - Le registre principal,
 - Les nœuds du réseau.
+
+On aura ainsi deux principaux type de communications entre les composantes :
+- Le registre principal et un noeud,
+> o	**un appel** : du noeud vers le régistre;
+> o	**une réponse** : du régistre vers le noeud en réponse à l'appel;
+- entre deux nœuds du réseau.
+> o	**un message** : du noeud vers un autre;
+> o	**un acquitement** : notification de reception d'un message;
 
 ## I.	LE REGISTRE PRINCIPALE ET UN NOEUD
 Le registre principal à pour principalement pour rôle de fournir des clés de sessions aux différents nœuds qui souhaitent se connecter au réseau.
@@ -33,6 +40,7 @@ Le registre principal à pour principalement pour rôle de fournir des clés de 
 
 > o	**PUBLIC_KEY** : pour pouvoir crypter ;
 > o	**IP ADDRESS** : pour pouvoir contacter le nœud ;
+![](https://lh5.googleusercontent.com/wNJL_sAWb4LjsTyFOIbZNhSnLCnLFxeJhDUgwasakfDq8n6gl2MdXacLPKav9SY-RyO4Is5Q3n3qZHqwzlcP=w1360-h623-rw)
 
 ## II.	ENTRE LES NŒUDS DU RESEAU
 
