@@ -34,7 +34,7 @@ Le registre principal à pour principalement pour rôle de fournir des clés de 
 > o	**PUBLIC_KEY** : pour pouvoir crypter ;
 > o	**IP ADDRESS** : pour pouvoir contacter le nœud ;
 
-![](https://lh4.googleusercontent.com/tOjYJ0sUM_yEabvFw7vSBeHD7732Aq5YMmcEgeE-03oOyBnDuuRgfUpOQV0iaQWajp39fYO-20RQXh1ewHE1=w1366-h656-rw)
+![](https://lh4.googleusercontent.com/em0DvBAq3Dlz3SNb-b_FQIJBC5cCB9efYaOZ3dGuE7w2qLoR78Cl3Eq6-7vPFPOi_1gBS-Xnb967SufsrR61=w1366-h656-rw)
 
 ## II.	ENTRE LES NŒUDS DU RESEAU
 
