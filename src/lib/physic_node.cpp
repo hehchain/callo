@@ -9,14 +9,13 @@
 */
 struct node
 {
-    char *name{}
-    char *ip{}
-    char *port{}
-    char protocol{}
-    char *privateKey
-    char *publicKey
-    struct node **neighbours{}
-}{}
+    char *name;
+    char *ip;
+    char *port;
+    char protocol;
+    char *publicKey;
+    struct node **neighbours;
+};
 
 /**
     Set name of physic node.
@@ -52,13 +51,6 @@ void setProtocol(PhysicNode *, char ){}
     @return void.
 */
 void setPublicKey(PhysicNode *, char *){}
-
-/**
-    Set private key using for communication with another physic node.
-    @param physic node(PhysicNode *) and name to assign (char *)
-    @return void.
-*/
-void setPrivateKey(PhysicNode *, char *){}
 
 /**
     Add neighbour to local neighbours list
@@ -116,13 +108,6 @@ char getProtocol(PhysicNode){}
     @return privete_key.
 */
 char * getPublicKey(PhysicNode){}
-
-/**
-    Return private key  of PhysicNode
-    @param physic node(PhysicNode *)
-    @return privete_key.
-*/
-char * getPrivateKey(PhysicNode){}
 
 /**
     Return PhysicNode if it's neighbour of PhysicNode
