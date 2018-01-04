@@ -1,0 +1,18 @@
+#include <stdio.h>
+/**
+    Implementation, physic_node.h
+    Purpose: Interface of PhysiNode
+    @author feavfeav@gmail.com
+    @version 1.0 02/01/18 
+*/
+struct node
+{
+    char *name;
+    char *ip;
+    char *port;
+    char protocol;
+    char *privateKey
+    char *publicKey
+    struct node **neighbours;
+};
+
