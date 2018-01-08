@@ -78,15 +78,60 @@ struct node
 
 typedef struct node list;
 
+//new ADT interface ....
+struct header{
+    char *chainId;
+    int height;
+    time_t time;
+    char *lastBlockHash;
+    char *stateHash;
+    char *lastBlockParts;
+};
+typedef struct header Header;
+
+struct Transaction{
+    int value;
+    char *adress;
+    int index;
+    char *signature;//transaction signature ...
+    struct Transaction *next;
+};
+
+typedef struct Transaction Txs;
+
+struct block {
+    Header * header;
+    Txs * transactions;
+    char *LastCommit;//block signature ...
+    struct block *next;
+} ;
+typedef struct block Block;
+
+int block_length(Block *head);//Number of block ...
+Block *search_block(Block *head,char *stateHash);//you can add more criteria ...
+int block_add(Block **head,Block *block_elt);// add new block  in the list ...
+int remove_block(Block **head,Block *block_elt);// remove some block...
+int add_transaction(Block **head,char *stateHash,Transaction *tx);// add transaction tx in some block with stateHash criteria ...
+int count_transaction(Block *block);// number of transaction in one block ...
+
+char *hash_transaction(int transaction_value,char *transaction_adress,int transaction_index);// get transaction signature or hash ...
+char *hash_block(void *more_header_criteria,void *more_transaction_criteria,char *block_lastComit);//block hash ....
+
+
+
+
+
 char *strstp(char *str, char *stp, int *size);
 int list_length(list *head);
 void list_add(list **head, char *name, char *ip, char *port, char protocol);
 list *list_find(list *head, char *name);
 void list_destroy(list **head);
 void list_print(list *head);
-char *strstp(char *str, char *stp, int *size);
-
 list *list_remove(list *head, list *element);
 
-#include "linkedlist.c"
+
+
+
+
+#include "linkedlist.cpp"
 #endif
