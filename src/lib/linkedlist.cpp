@@ -8,7 +8,7 @@ int list_length(list *head){
 }
 
 void list_add(list **head, char *name, char *ip, char *port, char protocol){
-    list *element = (list*)malloc(list);
+    list *element = (list*)malloc(sizeof(list));
     element->ip = ip;
     element->name = name;
     element->port = port;
