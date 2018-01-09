@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #define MAX_NEIGHBOUR 10
+
+#include "physic_node.h"
 /**
     Implementation, physic_node.h
     Purpose: Interface of PhysiNode
@@ -13,13 +15,13 @@ struct node
     char *name;
     char *ip;
     char *port;
-    char protocol;
+    char protocole;
     char *publicKey;
     int maxSize;
     int size;
     struct node **neighbours;
 };
-
+void StrCpy(char *, char *);
 /**
     Copy a string and allocate space for it
     @param nameDst (char *) and nameSrc (char *)
@@ -27,18 +29,20 @@ struct node
 */
 void StrCpy(char *src, char *dst){
 	if(src){
-		realloc(src,strlen(dst)*sizeof(char));
-		strcpy(src,dst);
+		if(realloc(src,strlen(dst)*sizeof(char)))
+			strcpy(src,dst);
 	}
 }
+
+
 /**
     Set name of physic node.
-    @param physic node(PhysicNode *) and name to assign (char *)
+    @param  nd physic node(PhysicNode *) and name to assign (char *)
     @return void.
 */
 void setName(PhysicNode *nd, char *name){
 	if(*nd){
-		StrCpy(*nd->name,name);
+		StrCpy((*nd)->name,name);
 	}
 }
 
@@ -49,7 +53,7 @@ void setName(PhysicNode *nd, char *name){
 */
 void setIp(PhysicNode *nd, char *ip){
 	if(*nd){
-		StrCpy(*nd->ip,ip);
+		StrCpy((*nd)->ip,ip);
 	}
 }
 
@@ -60,7 +64,7 @@ void setIp(PhysicNode *nd, char *ip){
 */
 void setPort(PhysicNode *nd, char *port){
 	if(*nd){
-		StrCpy(*nd->node,node);
+		StrCpy((*nd)->port,port);
 	}
 }
 
@@ -71,7 +75,7 @@ void setPort(PhysicNode *nd, char *port){
 */
 void setProtocol(PhysicNode *nd, char protocole){
 	if(*nd){
-		*nd->ip=ip;
+		(*nd)->protocole=protocole;
 	}
 }
 
@@ -82,7 +86,7 @@ void setProtocol(PhysicNode *nd, char protocole){
 */
 void setPublicKey(PhysicNode *nd, char *publicKey){
 	if(*nd){
-		StrCpy(*nd->publicKey,publicKey);
+		StrCpy((*nd)->publicKey,publicKey);
 	}
 }
 
@@ -99,24 +103,24 @@ void pNodeAddNeighbour(PhysicNode *nd,PhysicNode* ng){
 			If list is yet empty we initilize if to MAX_NEIGHBOUR length
 		*/
 		if(size==0){
-			*ng->neighbours = malloc(MAX_NEIGHBOUR*sizeof(PhysicNode));
-			*ng->size = 0;
-			*ng->maxSize *= MAX_NEIGHBOUR;
+			(*ng)->neighbours = (PhysicNode*) malloc(MAX_NEIGHBOUR*sizeof(PhysicNode));
+			(*ng)->size = 0;
+			(*ng)->maxSize *= MAX_NEIGHBOUR;
 		}
 
 		/**
 			If list is yet full we double his length
 		*/
-		if(size >= *ng->maxSize){
- 			realloc(*ng->neighbours,2*ng->maxSize*sizeof(PhysicNode));
- 			*ng->maxSize *= 2;
+		if(size >= (*ng)->maxSize){
+ 			if(realloc((*ng)->neighbours,2*(*ng)->maxSize*sizeof(PhysicNode)))
+ 				(*ng)->maxSize *= 2;
 		}
 
 		/**
 			Now add node neighbour
 		*/
-		*nd->neighbours[*ng->size] = ng;
-		*ng->size++;
+		(*nd)->neighbours[(*ng)->size] = *ng;
+		(*ng)->size++;
 	}
 }
 
@@ -125,7 +129,7 @@ void pNodeAddNeighbour(PhysicNode *nd,PhysicNode* ng){
     @param physic node(PhysicNode *) and neighbours to remove (PhysicNode )
     @return void.
 */
-PhysicNode *pNodeRemoveNeighbour(PhysicNode *nd,PhysicNode* ng){
+const PhysicNode *pNodeRemoveNeighbour(PhysicNode *nd,PhysicNode* ng){
 	if(*nd){
 		int size = pNodeNeighbourLength(*nd),i,overwrite=0;
 		for(i=0;i<size;i++){
@@ -133,12 +137,12 @@ PhysicNode *pNodeRemoveNeighbour(PhysicNode *nd,PhysicNode* ng){
 			    Overwrite the previous nodes with the next
 			*/
 			if(overwrite && i)
-				*nd->neighbours[i-1] = *nd->neighbours[i];
+				(*nd)->neighbours[i-1] = (*nd)->neighbours[i];
 
 			/**
 			    Overwrite when we have find the node to remove
 			*/
-			if(*nd->neighbours[i] == ng)
+			if((*nd)->neighbours[i] == *ng)
 				overwrite = 1;
 		}
 
@@ -146,7 +150,7 @@ PhysicNode *pNodeRemoveNeighbour(PhysicNode *nd,PhysicNode* ng){
 			Update length of neighbour
 		*/
 		if(overwrite)
-			*ng->size--;
+			(*ng)->size--;
 	}
 }
 
@@ -160,7 +164,7 @@ void pNodeDestroy(PhysicNode *nd){
 		/**
 			Free list of his neighbours
 		*/
-		free(*nd->neighbours);
+		free((*nd)->neighbours);
 		/**
 			Free node
 		*/
@@ -224,16 +228,6 @@ const char * getPublicKey(PhysicNode nd){
 	}
 }
 
-/**
-    Return private key  of PhysicNode
-    @param physic node(PhysicNode *)
-    @return privete_key.
-*/
-const char * getPrivateKey(PhysicNode nd){
-	if(nd){
-		return nd->privateKey;
-	}
-}
 
 /**
     Return PhysicNode if it's neighbour of PhysicNode
@@ -244,8 +238,8 @@ const PhysicNode *pNodeFind(PhysicNode nd, char *name){
 	if(nd){
 		int size = pNodeNeighbourLength(nd),i;
 		for(i=0;i<size;i++){
-			if(strcmp(nd->neighbours[i].name,name))
-				return nd->neighbours[i];
+			if(strcmp((*nd->neighbours[i]).name,name))
+				return (const PhysicNode *) nd->neighbours[i];
 		}
 	}
 	return NULL;
@@ -273,12 +267,11 @@ void pNodePrint(PhysicNode nd){
 		int size = pNodeNeighbourLength(nd),i;
 		printf("NAME : %s\n",nd->name);
 		printf("IP : %s\n",nd->ip);
-		printf("PORT : %c\n",nd->port);
-		printf("PROTOCOLE : %s\n",nd->protocole);
+		printf("PORT : %s\n",nd->port);
+		printf("PROTOCOLE : %c\n",nd->protocole);
 		printf("NEIGHBOUR : %d\n",nd->size);
 		for(i=0;i<size;i++)
 			printf("\tNAME =  %s | ADSRESS = %s:%s | PUBLIC KEY :%s\n",nd->name,nd->ip,nd->port,nd->publicKey);
 	}
 	
 }
-
