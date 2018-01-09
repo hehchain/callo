@@ -1,0 +1,1 @@
+# xxHash - Fast Hash algorithm

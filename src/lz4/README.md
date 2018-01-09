@@ -1,0 +1,1 @@
+# LZ4 - Fast LZ compression algorithm
