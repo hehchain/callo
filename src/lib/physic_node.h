@@ -20,26 +20,34 @@
 
 
 	typedef struct node *PhysicNode;
+
+	/**
+	    Create empty physic's node.
+	    @param void
+	    @return PhysicNode.
+	*/
+	PhysicNode createPhysicNode();
+
 	/**
 	    Set name of physic node.
 	    @param physic node(PhysicNode *) and name to assign (char *)
 	    @return void.
 	*/
-	void setName(PhysicNode *, char *);
+	void setName(PhysicNode *, const char *);
 
 	/**
 	    Set ip of physic node.
 	    @param physic node(PhysicNode *) and ip to assign (char *)
 	    @return void.
 	*/
-	void setIp(PhysicNode *, char *);
+	void setIp(PhysicNode *, const char *);
 
 	/**
 	    Set port of communication of physic node.
 	    @param physic node(PhysicNode *) and port to assign (char *)
 	    @return void.
 	*/
-	void setPort(PhysicNode *, char *);
+	void setPort(PhysicNode *, const char *);
 
 	/**
 	    Set protocol using for communication of physic node.
@@ -53,7 +61,7 @@
 	    @param physic node(PhysicNode *) and name to assign (char *)
 	    @return void.
 	*/
-	void setPublicKey(PhysicNode *, char *);
+	void setPublicKey(PhysicNode *, const char *);
 
 
 	/**
@@ -119,7 +127,7 @@
 	    @param physic node(PhysicNode ) and name (char *)
 	    @return PhysicNode.
 	*/
-	const PhysicNode *pNodeFind(PhysicNode , char *);
+	PhysicNode *pNodeFind(PhysicNode , const char *);
 
 	/**
 	    Return number of neighbour of PhysicNode
@@ -134,6 +142,5 @@
 	    @return void.
 	*/
 	void pNodePrint(PhysicNode );
-
 
 #endif
