@@ -54,7 +54,7 @@ void StrCpy(char **src, const char *dst){
     @param  nd physic node(PhysicNode *) and name to assign (char *)
     @return void.
 */
-void setName(PhysicNode *nd, const char *name){
+void setPNodeName(PhysicNode *nd, const char *name){
 	if(*nd){
 		StrCpy(&(*nd)->name,name);
 	}
@@ -65,7 +65,7 @@ void setName(PhysicNode *nd, const char *name){
     @param physic node(PhysicNode *) and ip to assign (char *)
     @return void.
 */
-void setIp(PhysicNode *nd, const char *ip){
+void setPNodeIp(PhysicNode *nd, const char *ip){
 	if(*nd){
 		StrCpy(&(*nd)->ip,ip);
 	}
@@ -76,7 +76,7 @@ void setIp(PhysicNode *nd, const char *ip){
     @param physic node(PhysicNode *) and port to assign (char *)
     @return void.
 */
-void setPort(PhysicNode *nd, const char *port){
+void setPNodePort(PhysicNode *nd, const char *port){
 	if(*nd){
 		StrCpy(&(*nd)->port,port);
 	}
@@ -87,7 +87,7 @@ void setPort(PhysicNode *nd, const char *port){
     @param physic node(PhysicNode *) and protocole to assign (char)
     @return void.
 */
-void setProtocol(PhysicNode *nd, char protocole){
+void setPNodeProtocol(PhysicNode *nd, char protocole){
 	if(*nd){
 		(*nd)->protocole=protocole;
 	}
@@ -98,7 +98,7 @@ void setProtocol(PhysicNode *nd, char protocole){
     @param physic node(PhysicNode *) and publicKey to assign (char *)
     @return void.
 */
-void setPublicKey(PhysicNode *nd, const char *publicKey){
+void setPNodePublicKey(PhysicNode *nd, const char *publicKey){
 	if(*nd){
 		StrCpy(&(*nd)->publicKey,publicKey);
 	}
@@ -194,7 +194,7 @@ void pNodeDestroy(PhysicNode *nd){
     @param physic node(PhysicNode *)
     @return name.
 */
-const char * getName(PhysicNode nd){
+const char * getPNodeName(PhysicNode nd){
 	if(nd){
 		return nd->name;
 	}
@@ -206,7 +206,7 @@ const char * getName(PhysicNode nd){
     @param physic node(PhysicNode *)
     @return ip.
 */
-const char * getIp(PhysicNode nd){
+const char * getPNodeIp(PhysicNode nd){
 	if(nd){
 		return nd->ip;
 	}
@@ -218,7 +218,7 @@ const char * getIp(PhysicNode nd){
     @param physic node(PhysicNode *)
     @return port.
 */
-const char * getPort(PhysicNode nd){
+const char * getPNodePort(PhysicNode nd){
 	if(nd){
 		return nd->port;
 	}
@@ -230,7 +230,7 @@ const char * getPort(PhysicNode nd){
     @param physic node(PhysicNode *)
     @return protocol.
 */
-char getProtocol(PhysicNode nd){
+char getPNodeProtocol(PhysicNode nd){
 	if(nd){
 		return nd->protocole;
 	}
@@ -242,7 +242,7 @@ char getProtocol(PhysicNode nd){
     @param physic node(PhysicNode *)
     @return privete_key.
 */
-const char * getPublicKey(PhysicNode nd){
+const char * getPNodePublicKey(PhysicNode nd){
 	if(nd){
 		return nd->publicKey;
 	}

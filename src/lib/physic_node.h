@@ -33,35 +33,35 @@
 	    @param physic node(PhysicNode *) and name to assign (char *)
 	    @return void.
 	*/
-	void setName(PhysicNode *, const char *);
+	void setPNodeName(PhysicNode *, const char *);
 
 	/**
 	    Set ip of physic node.
 	    @param physic node(PhysicNode *) and ip to assign (char *)
 	    @return void.
 	*/
-	void setIp(PhysicNode *, const char *);
+	void setPNodeIp(PhysicNode *, const char *);
 
 	/**
 	    Set port of communication of physic node.
 	    @param physic node(PhysicNode *) and port to assign (char *)
 	    @return void.
 	*/
-	void setPort(PhysicNode *, const char *);
+	void setPNodePort(PhysicNode *, const char *);
 
 	/**
 	    Set protocol using for communication of physic node.
 	    @param physic node(PhysicNode *) and protocole to assign (char)
 	    @return void.
 	*/
-	void setProtocol(PhysicNode *, char );
+	void setPNodeProtocol(PhysicNode *, char );
 
 	/**
 	    Set public key using for communication with another physic node.
 	    @param physic node(PhysicNode *) and name to assign (char *)
 	    @return void.
 	*/
-	void setPublicKey(PhysicNode *, const char *);
+	void setPNodePublicKey(PhysicNode *, const char *);
 
 
 	/**
@@ -91,35 +91,35 @@
 	    @param physic node(PhysicNode *)
 	    @return name.
 	*/
-	const char * getName(PhysicNode);
+	const char * getPNodeName(PhysicNode);
 
 	/**
 	    Return ip address of PhysicNode
 	    @param physic node(PhysicNode *)
 	    @return ip.
 	*/
-	const char * getIp(PhysicNode);
+	const char * getPNodeIp(PhysicNode);
 
 	/**
 	    Return port  of PhysicNode
 	    @param physic node(PhysicNode *)
 	    @return port.
 	*/
-	const char * getPort(PhysicNode);
+	const char * getPNodePort(PhysicNode);
 
 	/**
 	    Return protocol  of PhysicNode
 	    @param physic node(PhysicNode *)
 	    @return protocol.
 	*/
-	char getProtocol(PhysicNode);
+	char getPNodeProtocol(PhysicNode);
 
 	/**
 	    Return public key  of PhysicNode
 	    @param physic node(PhysicNode *)
 	    @return privete_key.
 	*/
-	const char * getPublicKey(PhysicNode);
+	const char * getPNodePublicKey(PhysicNode);
 
 
 	/**
