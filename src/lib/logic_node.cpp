@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #define MAX_NEIGHBOUR 10
 #include "logic_node.h"
+<<<<<<< HEAD
 struct HEADER{
         int chainId;
         int height;
@@ -17,3 +18,5 @@ struct node
     DATA data;
     struct node * next;
 };
+=======
+>>>>>>> 7fecc6693a872b494c46ade9fb889227bd46763d

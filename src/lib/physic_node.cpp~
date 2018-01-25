@@ -1,20 +1,28 @@
 #include <stdio.h>
+<<<<<<< HEAD
 #include <string.h>
 #include <stdlib.h>
 #define MAX_NEIGHBOUR 10
 #include "physic_node.h"
 
+=======
+>>>>>>> 7fecc6693a872b494c46ade9fb889227bd46763d
 /**
     Implementation, physic_node.h
     Purpose: Interface of PhysiNode
     @author feavfeav@gmail.com
+<<<<<<< HEAD
     @version 1.0 03/01/18 
+=======
+    @version 1.0 02/01/18 
+>>>>>>> 7fecc6693a872b494c46ade9fb889227bd46763d
 */
 struct node
 {
     char *name;
     char *ip;
     char *port;
+<<<<<<< HEAD
     char protocole;
     char *publicKey;
     int maxSize;
@@ -303,3 +311,11 @@ void pNodePrint(PhysicNode nd){
 	}
 	
 }
+=======
+    char protocol;
+    char *privateKey
+    char *publicKey
+    struct node **neighbours;
+};
+
+>>>>>>> 7fecc6693a872b494c46ade9fb889227bd46763d
