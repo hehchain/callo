@@ -1,0 +1,146 @@
+/**
+    Interface, physic_node.h
+    Purpose: Interface of PhysiNode
+    @author feavfeav@gmail.com
+    @version 1.0 02/01/18 
+*/
+#ifndef LINKEDLIST_H
+	#define LINKEDLIST_H
+
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include <string.h>
+	#if !defined(_WIN32) || defined(__MINGW32__)
+		#include <sys/time.h>
+	#endif
+
+
+	#define MAX(x, y) ((x) >= (y) ? (x) : (y))
+	#define MIN(x, y) ((x) <= (y) ? (x) : (y))
+
+
+	typedef struct node *LogicNode;
+
+	/**
+	    Create empty logic's node.
+	    @param void
+	    @return LogicNode.
+	*/
+	LogicNode createLogicicNode();
+
+	/**
+	    Set name of logic node.
+	    @param logic node(LogicNode *) and chain id to assign (char *)
+	    @return void.
+	*/
+	void setLNodeChainId(LogicNode *, const char *);
+
+	/**
+	    Set ip of logic node.
+	    @param logic node(LogicNode *) and height to assign (int)
+	    @return void.
+	*/
+	void setLNodeIp(LogicNode *, int);
+
+	/**
+	    Set port of communication of logic node.
+	    @param logic node(LogicNode *) and port to assign (char *)
+	    @return void.
+	*/
+	void setLNodePort(LogicNode *, const char *);
+
+	/**
+	    Set protocol using for communication of logic node.
+	    @param logic node(LogicNode *) and protocole to assign (char)
+	    @return void.
+	*/
+	void setLNodeProtocol(LogicNode *, char );
+
+	/**
+	    Set public key using for communication with another logic node.
+	    @param logic node(LogicNode *) and name to assign (char *)
+	    @return void.
+	*/
+	void setLNodePublicKey(LogicNode *, const char *);
+
+
+	/**
+	    Add neighbour to local neighbours list
+	    @param logic node(LogicNode *) and neighbours to add (LogicNode )
+	    @return void.
+	*/
+	void lNodeAddNeighbour(LogicNode *,LogicNode *);
+
+	/**
+	    Remove neighbour to local neighbours list
+	    @param logic node(LogicNode *) and neighbours to remove (LogicNode )
+	    @return void.
+	*/
+	const LogicNode *lNodeRemoveNeighbour(LogicNode *, LogicNode *);
+
+	/**
+	    Destroy LogicNode and his depencees
+	    @param logic node(LogicNode *)
+	    @return void.
+	*/
+	void lNodeDestroy(LogicNode *);
+
+
+	/**
+	    Return name of LogicNode
+	    @param logic node(LogicNode *)
+	    @return name.
+	*/
+	const char * getLNodeName(LogicNode);
+
+	/**
+	    Return ip address of LogicNode
+	    @param logic node(LogicNode *)
+	    @return ip.
+	*/
+	const char * getLNodeIp(LogicNode);
+
+	/**
+	    Return port  of LogicNode
+	    @param logic node(LogicNode *)
+	    @return port.
+	*/
+	const char * getLNodePort(LogicNode);
+
+	/**
+	    Return protocol  of LogicNode
+	    @param logic node(LogicNode *)
+	    @return protocol.
+	*/
+	char getLNodeProtocol(LogicNode);
+
+	/**
+	    Return public key  of LogicNode
+	    @param logic node(LogicNode *)
+	    @return privete_key.
+	*/
+	const char * getLNodePublicKey(LogicNode);
+
+
+	/**
+	    Return LogicNode if it's neighbour of LogicNode
+	    @param logic node(LogicNode ) and name (char *)
+	    @return LogicNode.
+	*/
+	LogicNode *lNodeFind(LogicNode , const char *);
+
+	/**
+	    Return number of neighbour of LogicNode
+	    @param logic node(LogicNode)
+	    @return lengh.
+	*/
+	int lNodeNeighbourLength(LogicNode );
+
+	/**
+	    print LogicNode and his neighbour
+	    @param logic node(LogicNode )
+	    @return void.
+	*/
+	void lNodePrint(LogicNode );
+
+#endif
