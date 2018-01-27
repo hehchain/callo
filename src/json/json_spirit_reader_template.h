@@ -386,7 +386,7 @@ void throw_error(Iter_type i, const std::string &reason)
 // the spirit grammer
 //
 template <class Value_type, class Iter_type>
-class Json_grammer : public spirit_namespace::grammar<Json_grammer<Value_type, Iter_type>>
+class Json_grammer : public spirit_namespace::grammar < Json_grammer <Value_type, Iter_type> >
 {
   public:
     typedef Semantic_actions<Value_type, Iter_type> Semantic_actions_t;

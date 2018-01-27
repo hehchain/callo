@@ -1,10 +1,5 @@
-// Copyright (c) 2014 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#ifndef BITCOIN_CRYPTO_HMAC_SHA512_H
-#define BITCOIN_CRYPTO_HMAC_SHA512_H
-
+#ifndef HMAC_SHA512_H_INCLUDED
+#define HMAC_SHA512_H_INCLUDED
 #include "sha512.h"
 
 #include <stdint.h>
@@ -28,5 +23,4 @@ class CHMAC_SHA512
     }
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
 };
-
-#endif // BITCOIN_CRYPTO_HMAC_SHA512_H
+#endif // HMAC_SHA512_H_INCLUDED

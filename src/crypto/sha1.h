@@ -1,10 +1,5 @@
-// Copyright (c) 2014 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#ifndef BITCOIN_CRYPTO_SHA1_H
-#define BITCOIN_CRYPTO_SHA1_H
-
+#ifndef SHA1_H_INCLUDED
+#define SHA1_H_INCLUDED
 #include <stdint.h>
 #include <stdlib.h>
 
@@ -24,3 +19,4 @@ class CSHA1
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
     CSHA1 &Reset();
 };
+#endif // SHA1_H_INCLUDED

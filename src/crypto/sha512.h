@@ -1,9 +1,5 @@
-// Copyright (c) 2014 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
-#ifndef BITCOIN_CRYPTO_SHA512_H
-#define BITCOIN_CRYPTO_SHA512_H
+#ifndef SHA512_H_INCLUDED
+#define SHA512_H_INCLUDED
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -24,5 +20,4 @@ class CSHA512
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
     CSHA512 &Reset();
 };
-
-#endif // BITCOIN_CRYPTO_SHA512_H
+#endif // SHA512_H_INCLUDED
