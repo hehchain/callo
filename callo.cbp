@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="callo" />
+		<Option title="callO" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/callo" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/callO" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/callo" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/callO" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -30,14 +30,186 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="crypto/common.h" />
-		<Unit filename="crypto/hmac_sha256.h" />
-		<Unit filename="crypto/hmac_sha512.h" />
-		<Unit filename="crypto/ripemd160.h" />
-		<Unit filename="crypto/sha1.h" />
-		<Unit filename="crypto/sha256.h" />
-		<Unit filename="crypto/sha512.h" />
+		<Unit filename="src/allocators.h" />
+		<Unit filename="src/build.h" />
+		<Unit filename="src/clientversion.h" />
+		<Unit filename="src/compat.h" />
+		<Unit filename="src/crypto/common.h" />
+		<Unit filename="src/crypto/hmac_sha256.cpp" />
+		<Unit filename="src/crypto/hmac_sha256.h" />
+		<Unit filename="src/crypto/hmac_sha512.cpp" />
+		<Unit filename="src/crypto/hmac_sha512.h" />
+		<Unit filename="src/crypto/ripemd160.cpp" />
+		<Unit filename="src/crypto/ripemd160.h" />
+		<Unit filename="src/crypto/sha1.cpp" />
+		<Unit filename="src/crypto/sha1.h" />
+		<Unit filename="src/crypto/sha256.cpp" />
+		<Unit filename="src/crypto/sha256.h" />
+		<Unit filename="src/crypto/sha512.cpp" />
+		<Unit filename="src/crypto/sha512.h" />
+		<Unit filename="src/hash.cpp" />
+		<Unit filename="src/hash.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/json/json_spirit.h" />
+		<Unit filename="src/json/json_spirit_error_position.h" />
+		<Unit filename="src/json/json_spirit_reader.cpp" />
+		<Unit filename="src/json/json_spirit_reader.h" />
+		<Unit filename="src/json/json_spirit_reader_template.h" />
+		<Unit filename="src/json/json_spirit_stream_reader.h" />
+		<Unit filename="src/json/json_spirit_utils.h" />
+		<Unit filename="src/json/json_spirit_value.cpp" />
+		<Unit filename="src/json/json_spirit_value.h" />
+		<Unit filename="src/json/json_spirit_writer.cpp" />
+		<Unit filename="src/json/json_spirit_writer.h" />
+		<Unit filename="src/json/json_spirit_writer_template.h" />
+		<Unit filename="src/leveldb/db/autocompact_test.cc" />
+		<Unit filename="src/leveldb/db/builder.cc" />
+		<Unit filename="src/leveldb/db/builder.h" />
+		<Unit filename="src/leveldb/db/c.cc" />
+		<Unit filename="src/leveldb/db/c_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/leveldb/db/corruption_test.cc" />
+		<Unit filename="src/leveldb/db/db_bench.cc" />
+		<Unit filename="src/leveldb/db/db_impl.cc" />
+		<Unit filename="src/leveldb/db/db_impl.h" />
+		<Unit filename="src/leveldb/db/db_iter.cc" />
+		<Unit filename="src/leveldb/db/db_iter.h" />
+		<Unit filename="src/leveldb/db/db_test.cc" />
+		<Unit filename="src/leveldb/db/dbformat.cc" />
+		<Unit filename="src/leveldb/db/dbformat.h" />
+		<Unit filename="src/leveldb/db/dbformat_test.cc" />
+		<Unit filename="src/leveldb/db/filename.cc" />
+		<Unit filename="src/leveldb/db/filename.h" />
+		<Unit filename="src/leveldb/db/filename_test.cc" />
+		<Unit filename="src/leveldb/db/leveldb_main.cc" />
+		<Unit filename="src/leveldb/db/log_format.h" />
+		<Unit filename="src/leveldb/db/log_reader.cc" />
+		<Unit filename="src/leveldb/db/log_reader.h" />
+		<Unit filename="src/leveldb/db/log_test.cc" />
+		<Unit filename="src/leveldb/db/log_writer.cc" />
+		<Unit filename="src/leveldb/db/log_writer.h" />
+		<Unit filename="src/leveldb/db/memtable.cc" />
+		<Unit filename="src/leveldb/db/memtable.h" />
+		<Unit filename="src/leveldb/db/repair.cc" />
+		<Unit filename="src/leveldb/db/skiplist.h" />
+		<Unit filename="src/leveldb/db/skiplist_test.cc" />
+		<Unit filename="src/leveldb/db/snapshot.h" />
+		<Unit filename="src/leveldb/db/table_cache.cc" />
+		<Unit filename="src/leveldb/db/table_cache.h" />
+		<Unit filename="src/leveldb/db/version_edit.cc" />
+		<Unit filename="src/leveldb/db/version_edit.h" />
+		<Unit filename="src/leveldb/db/version_edit_test.cc" />
+		<Unit filename="src/leveldb/db/version_set.cc" />
+		<Unit filename="src/leveldb/db/version_set.h" />
+		<Unit filename="src/leveldb/db/version_set_test.cc" />
+		<Unit filename="src/leveldb/db/write_batch.cc" />
+		<Unit filename="src/leveldb/db/write_batch_internal.h" />
+		<Unit filename="src/leveldb/db/write_batch_test.cc" />
+		<Unit filename="src/leveldb/doc/bench/db_bench_sqlite3.cc" />
+		<Unit filename="src/leveldb/doc/bench/db_bench_tree_db.cc" />
+		<Unit filename="src/leveldb/helpers/memenv/memenv.cc" />
+		<Unit filename="src/leveldb/helpers/memenv/memenv.h" />
+		<Unit filename="src/leveldb/helpers/memenv/memenv_test.cc" />
+		<Unit filename="src/leveldb/include/leveldb/c.h" />
+		<Unit filename="src/leveldb/include/leveldb/cache.h" />
+		<Unit filename="src/leveldb/include/leveldb/comparator.h" />
+		<Unit filename="src/leveldb/include/leveldb/db.h" />
+		<Unit filename="src/leveldb/include/leveldb/env.h" />
+		<Unit filename="src/leveldb/include/leveldb/filter_policy.h" />
+		<Unit filename="src/leveldb/include/leveldb/iterator.h" />
+		<Unit filename="src/leveldb/include/leveldb/options.h" />
+		<Unit filename="src/leveldb/include/leveldb/slice.h" />
+		<Unit filename="src/leveldb/include/leveldb/status.h" />
+		<Unit filename="src/leveldb/include/leveldb/table.h" />
+		<Unit filename="src/leveldb/include/leveldb/table_builder.h" />
+		<Unit filename="src/leveldb/include/leveldb/write_batch.h" />
+		<Unit filename="src/leveldb/issues/issue178_test.cc" />
+		<Unit filename="src/leveldb/port/atomic_pointer.h" />
+		<Unit filename="src/leveldb/port/port.h" />
+		<Unit filename="src/leveldb/port/port_example.h" />
+		<Unit filename="src/leveldb/port/port_posix.cc" />
+		<Unit filename="src/leveldb/port/port_posix.h" />
+		<Unit filename="src/leveldb/port/port_win.cc" />
+		<Unit filename="src/leveldb/port/port_win.h" />
+		<Unit filename="src/leveldb/port/thread_annotations.h" />
+		<Unit filename="src/leveldb/port/win/stdint.h" />
+		<Unit filename="src/leveldb/table/block.cc" />
+		<Unit filename="src/leveldb/table/block.h" />
+		<Unit filename="src/leveldb/table/block_builder.cc" />
+		<Unit filename="src/leveldb/table/block_builder.h" />
+		<Unit filename="src/leveldb/table/filter_block.cc" />
+		<Unit filename="src/leveldb/table/filter_block.h" />
+		<Unit filename="src/leveldb/table/filter_block_test.cc" />
+		<Unit filename="src/leveldb/table/format.cc" />
+		<Unit filename="src/leveldb/table/format.h" />
+		<Unit filename="src/leveldb/table/iterator.cc" />
+		<Unit filename="src/leveldb/table/iterator_wrapper.h" />
+		<Unit filename="src/leveldb/table/merger.cc" />
+		<Unit filename="src/leveldb/table/merger.h" />
+		<Unit filename="src/leveldb/table/table.cc" />
+		<Unit filename="src/leveldb/table/table_builder.cc" />
+		<Unit filename="src/leveldb/table/table_test.cc" />
+		<Unit filename="src/leveldb/table/two_level_iterator.cc" />
+		<Unit filename="src/leveldb/table/two_level_iterator.h" />
+		<Unit filename="src/leveldb/util/arena.cc" />
+		<Unit filename="src/leveldb/util/arena.h" />
+		<Unit filename="src/leveldb/util/arena_test.cc" />
+		<Unit filename="src/leveldb/util/bloom.cc" />
+		<Unit filename="src/leveldb/util/bloom_test.cc" />
+		<Unit filename="src/leveldb/util/cache.cc" />
+		<Unit filename="src/leveldb/util/cache_test.cc" />
+		<Unit filename="src/leveldb/util/coding.cc" />
+		<Unit filename="src/leveldb/util/coding.h" />
+		<Unit filename="src/leveldb/util/coding_test.cc" />
+		<Unit filename="src/leveldb/util/comparator.cc" />
+		<Unit filename="src/leveldb/util/crc32c.cc" />
+		<Unit filename="src/leveldb/util/crc32c.h" />
+		<Unit filename="src/leveldb/util/crc32c_test.cc" />
+		<Unit filename="src/leveldb/util/env.cc" />
+		<Unit filename="src/leveldb/util/env_posix.cc" />
+		<Unit filename="src/leveldb/util/env_test.cc" />
+		<Unit filename="src/leveldb/util/env_win.cc" />
+		<Unit filename="src/leveldb/util/filter_policy.cc" />
+		<Unit filename="src/leveldb/util/hash.cc" />
+		<Unit filename="src/leveldb/util/hash.h" />
+		<Unit filename="src/leveldb/util/histogram.cc" />
+		<Unit filename="src/leveldb/util/histogram.h" />
+		<Unit filename="src/leveldb/util/logging.cc" />
+		<Unit filename="src/leveldb/util/logging.h" />
+		<Unit filename="src/leveldb/util/mutexlock.h" />
+		<Unit filename="src/leveldb/util/options.cc" />
+		<Unit filename="src/leveldb/util/posix_logger.h" />
+		<Unit filename="src/leveldb/util/random.h" />
+		<Unit filename="src/leveldb/util/status.cc" />
+		<Unit filename="src/leveldb/util/testharness.cc" />
+		<Unit filename="src/leveldb/util/testharness.h" />
+		<Unit filename="src/leveldb/util/testutil.cc" />
+		<Unit filename="src/leveldb/util/testutil.h" />
+		<Unit filename="src/lz4/lz4.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/lz4/lz4.h" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/main.h" />
+		<Unit filename="src/netbase.cpp" />
+		<Unit filename="src/netbase.h" />
+		<Unit filename="src/serialize.h" />
+		<Unit filename="src/sync.cpp" />
+		<Unit filename="src/sync.h" />
+		<Unit filename="src/threadsafety.h" />
+		<Unit filename="src/uint256.h" />
+		<Unit filename="src/util.cpp" />
+		<Unit filename="src/util.h" />
+		<Unit filename="src/version.cpp" />
+		<Unit filename="src/version.h" />
+		<Unit filename="src/xxhash/xxhash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/xxhash/xxhash.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
